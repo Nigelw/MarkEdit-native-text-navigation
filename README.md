@@ -4,10 +4,13 @@ Adopts standard macOS text-editing behavior for Option-Up/Down in [MarkEdit](htt
 
 ## Behavior
 
-- `Option-Up` moves the insertion point to the beginning of the current paragraph.
-- `Option-Down` moves the insertion point to the end of the current paragraph.
-- `Shift-Option-Up` extends the selection to the beginning of the current paragraph.
-- `Shift-Option-Down` extends the selection to the end of the current paragraph.
+By default, MarkEdit key bindings follow the conventions used by source code editors such as VS Code. This means that by default:
+- `Option-Up/Down` moves the current paragraph up or down.
+- `Shift-Option-Up/Down` duplicates the current paragraph above or below.
+
+This extension overrides these defaults so that:
+- `Option-Up/Down` moves the insertion point to the beginning/end of the current paragraph.
+- `Shift-Option-Up/Down` extends the selection to the beginning/end of the current paragraph.
 
 When the insertion point or selection head is already at the requested boundary, the same shortcut advances to the matching boundary of the previous or next paragraph.
 
