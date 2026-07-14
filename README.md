@@ -1,6 +1,6 @@
 # MarkEdit Native Text Navigation Plugin
 
-Restores the standard macOS text-editing behavior for Option-Up/Down in [MarkEdit](https://github.com/MarkEdit-app/MarkEdit).
+Adopts standard macOS text-editing behavior for Option-Up/Down in [MarkEdit](https://github.com/MarkEdit-app/MarkEdit).
 
 ## Behavior
 
