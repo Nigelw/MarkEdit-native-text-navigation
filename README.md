@@ -2,8 +2,6 @@
 
 Restores the standard macOS text-editing behavior for Option-Up/Down in [MarkEdit](https://github.com/MarkEdit-app/MarkEdit).
 
-Repository: [github.com/Nigelw/MarkEdit-native-text-navigation](https://github.com/Nigelw/MarkEdit-native-text-navigation)
-
 ## Behavior
 
 - `Option-Up` moves the insertion point to the beginning of the current paragraph.
