@@ -1,3 +1,7 @@
+// markedit-native-text-navigation
+// Version: 1.0.0
+// Repository: https://github.com/Nigelw/MarkEdit-native-text-navigation
+
 (() => {
   const { keymap } = MarkEdit.codemirror.view;
   const { EditorSelection, Prec } = MarkEdit.codemirror.state;

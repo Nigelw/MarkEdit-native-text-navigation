@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Restore native macOS Option-Up/Down paragraph navigation shortcuts in MarkEdit.",
   "main": "markedit-native-text-navigation.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nigelw/MarkEdit-native-text-navigation.git"
+  },
   "license": "MIT",
   "private": true
 }
