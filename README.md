@@ -38,7 +38,7 @@ In CodeMirror terms, a paragraph here is the current document line, which matche
 
 ## Updates
 
-The extension checks the latest GitHub release once per day. When a newer release is available, it downloads the `markedit-native-text-navigation.js` release asset and overwrites the installed script. Restart MarkEdit after updating.
+The extension checks the latest GitHub release once per week. When a newer release is available, it downloads the `markedit-native-text-navigation.js` release asset and overwrites the installed script. Restart MarkEdit after updating.
 
 You can also check manually from *Extensions -> Native Text Navigation -> Check for Updates...*.
 

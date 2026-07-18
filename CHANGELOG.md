@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 1.0.2 (2026-07-18)
+
+### Improved
+
+- Reduces automatic update checks from daily to weekly.
+- Documents the weekly update-check interval in the README.
+
 ## 1.0.1 (2026-07-18)
 
 ### New
