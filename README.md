@@ -2,6 +2,15 @@
 
 Adopts standard macOS text-editing behavior for Option-Up/Down in [MarkEdit](https://github.com/MarkEdit-app/MarkEdit).
 
+**[⬇ Download the latest release](https://github.com/Nigelw/MarkEdit-native-text-navigation/releases/latest/download/markedit-native-text-navigation.js)** then see [Install](#install) below.
+
+## Features
+
+- Restores native macOS paragraph navigation shortcuts in MarkEdit.
+- Adds *Extensions -> Native Text Navigation -> Visit GitHub Project*.
+- Adds *Extensions -> Native Text Navigation -> Check for Updates...*.
+- Checks GitHub releases for newer versions on launch and offers to install them.
+
 ## Behavior
 
 By default, MarkEdit key bindings follow the conventions used by source code editors such as VS Code. This means that by default:
@@ -18,6 +27,37 @@ In CodeMirror terms, a paragraph here is the current document line, which matche
 
 ## Install
 
-Copy `markedit-native-text-navigation.js` into MarkEdit's user scripts folder, or install this folder as a MarkEdit customization extension if you manage your extensions as directories.
+1. Download the [latest release](https://github.com/Nigelw/MarkEdit-native-text-navigation/releases/latest/download/markedit-native-text-navigation.js)
+2. Copy `markedit-native-text-navigation.js` into MarkEdit's scripts folder:
 
-The script uses the public `MarkEdit.addExtension` API and registers a highest-precedence CodeMirror keymap so it runs before MarkEdit's default paragraph move/duplicate bindings.
+```
+~/Library/Containers/app.cyan.markedit/Data/Documents/scripts/
+```
+
+3. Relaunch MarkEdit. After that the extension [keeps itself up to date](#updates) — no need to download it again by hand.
+
+## Updates
+
+The extension checks the latest GitHub release once per day. When a newer release is available, it downloads the `markedit-native-text-navigation.js` release asset and overwrites the installed script. Restart MarkEdit after updating.
+
+You can also check manually from *Extensions -> Native Text Navigation -> Check for Updates...*.
+
+By default, update behavior is `notify`. To change it, add this to MarkEdit's `settings.json`:
+
+```json
+{
+  "extension.markeditNativeTextNavigation": {
+    "update": "notify"
+  }
+}
+```
+
+Supported values are:
+
+- `automatic`: install new releases silently, then prompt you to restart MarkEdit.
+- `notify`: ask before installing.
+- `never`: disable automatic checks. Manual checks still work from the menu.
+
+## Releases
+
+Release notes live in [CHANGELOG.md](CHANGELOG.md). This repo also includes a `release` skill at `.claude/skills/release/SKILL.md` for bumping versions, updating the changelog, tagging, pushing, and publishing the script as the GitHub release asset used by the updater.
