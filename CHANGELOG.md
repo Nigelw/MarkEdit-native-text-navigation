@@ -7,7 +7,6 @@
 ### Improved
 
 - Reduces automatic update checks from daily to weekly.
-- Documents the weekly update-check interval in the README.
 
 ## 1.0.1 (2026-07-18)
 
