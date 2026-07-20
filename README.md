@@ -1,4 +1,4 @@
-# markedit-native-text-shortcuts
+# MarkEdit Native Text Shortcuts
 
 Enable standard macOS text-editing keyboard shortcuts in [MarkEdit](https://github.com/MarkEdit-app/MarkEdit).
 
