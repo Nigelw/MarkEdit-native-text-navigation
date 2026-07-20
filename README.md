@@ -2,7 +2,7 @@
 
 Enable standard macOS text-editing keyboard shortcuts in [MarkEdit](https://github.com/MarkEdit-app/MarkEdit).
 
-**[Download the latest release](https://github.com/Nigelw/markedit-native-text-shortcuts/releases/latest/download/markedit-native-text-shortcuts.js)** then see [Install](#install) below.
+**[Download the latest release](https://github.com/Nigelw/MarkEdit-native-text-shortcuts/releases/latest/download/markedit-native-text-shortcuts.js)** then see [Install](#install) below.
 
 ## Behavior
 
@@ -19,7 +19,7 @@ In CodeMirror terms, a paragraph here is the current document line, which matche
 
 ## Install
 
-1. Download the [latest release](https://github.com/Nigelw/markedit-native-text-shortcuts/releases/latest/download/markedit-native-text-shortcuts.js).
+1. Download the [latest release](https://github.com/Nigelw/MarkEdit-native-text-shortcuts/releases/latest/download/markedit-native-text-shortcuts.js).
 2. Copy `markedit-native-text-shortcuts.js` into MarkEdit's scripts folder:
 
 ```

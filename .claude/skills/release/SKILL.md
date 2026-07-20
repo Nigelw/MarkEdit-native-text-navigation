@@ -5,7 +5,7 @@ description: Cut a new release of the markedit-native-text-shortcuts extension: 
 
 # Release markedit-native-text-shortcuts
 
-This extension has an in-app self-updater in `markedit-native-text-shortcuts.js`. Installed copies poll `api.github.com/repos/Nigelw/markedit-native-text-shortcuts/releases/latest`, compare the release tag against the script's `CURRENT_VERSION`, and when a newer version exists, download the release's `markedit-native-text-shortcuts.js` asset and overwrite their own installed script file with it.
+This extension has an in-app self-updater in `markedit-native-text-shortcuts.js`. Installed copies poll `api.github.com/repos/Nigelw/MarkEdit-native-text-shortcuts/releases/latest`, compare the release tag against the script's `CURRENT_VERSION`, and when a newer version exists, download the release's `markedit-native-text-shortcuts.js` asset and overwrite their own installed script file with it.
 
 A release is usable by the updater only if all of these agree:
 
@@ -53,7 +53,7 @@ There is no build step in this repo. The root `markedit-native-text-shortcuts.js
 
 9. Verify the latest release exposes the asset the updater downloads:
    ```sh
-   url=$(curl -sS "https://api.github.com/repos/Nigelw/markedit-native-text-shortcuts/releases/latest" \
+   url=$(curl -sS "https://api.github.com/repos/Nigelw/MarkEdit-native-text-shortcuts/releases/latest" \
      | node -e "let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{const a=JSON.parse(d).assets||[];const m=a.find(x=>x.name==='markedit-native-text-shortcuts.js');console.log(m?m.browser_download_url:'MISSING')})")
    echo "asset url: $url"
    [ "$url" = MISSING ] || curl -sSfI "$url" | head -1

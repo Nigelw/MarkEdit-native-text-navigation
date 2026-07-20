@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.0.4 (2026-07-20)
+
+### Fixed
+
+- Update repo and code to use correct repo name capitalization..
+
 ## 1.0.3 (2026-07-20)
 
 ### Changed
