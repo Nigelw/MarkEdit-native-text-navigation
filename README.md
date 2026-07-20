@@ -6,7 +6,7 @@ Enable standard macOS text-editing keyboard shortcuts in [MarkEdit](https://gith
 
 ## Behavior
 
-By default, MarkEdit key bindings follow the conventions used by source code editors such as VS Code. This means that by default:
+By default, MarkEdit key bindings follow the conventions used by source code editors such as VS Code:
 - `Option-Up/Down` moves the current paragraph up or down.
 - `Shift-Option-Up/Down` duplicates the current paragraph above or below.
 
