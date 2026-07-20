@@ -19,7 +19,7 @@ In CodeMirror terms, a paragraph here is the current document line, which matche
 
 ## Install
 
-1. Download the [latest release](https://github.com/Nigelw/MarkEdit-native-text-navigation/releases/latest/download/markedit-native-text-navigation.js)
+1. Download the [latest release](https://github.com/Nigelw/MarkEdit-native-text-navigation/releases/latest/download/markedit-native-text-navigation.js).
 2. Copy `markedit-native-text-navigation.js` into MarkEdit's scripts folder:
 
 ```
