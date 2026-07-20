@@ -26,12 +26,29 @@ There is no build step in this repo. The root `markedit-native-text-shortcuts.js
 
 2. Update `markedit-native-text-shortcuts.js` so both the `// Version:` header and `CURRENT_VERSION` constant match the new version.
 
-3. Update `CHANGELOG.md` interactively:
+3. Draft user-facing release notes in `CHANGELOG.md`:
    - Find the previous tag with `git describe --tags --abbrev=0`. If there is no previous tag, use all history.
-   - Gather commits since the previous release with `git log <prev-tag>..HEAD --pretty=format:'%s%n%b%x1e'`.
-   - Draft user-facing entries grouped under `### New`, `### Improved`, and `### Fixed`, using only groups that have items. Fold in anything already under `## Unreleased`.
-   - Present the draft to the user and ask them to edit and confirm it. Do not write the final changelog until the user approves.
-   - After approval, replace the empty `## Unreleased` section with a fresh empty `## Unreleased` plus `## <version> (<YYYY-MM-DD>)` and the confirmed entries.
+   - Gather commits since the previous release with:
+     ```sh
+     git log --no-merges <prev-tag>..HEAD --pretty='%s%n%b'
+     ```
+   - Move the `## Unreleased` notes into a new release section for the chosen version:
+     ```markdown
+     ## <version> (YYYY-MM-DD)
+
+     ### New
+
+     - ...
+     ```
+   - If `## Unreleased` is empty, draft the release section from the commits.
+   - Author the section as short user-facing Markdown, applying these rules:
+     - Draft release note entries under three Markdown `###` headings in this order: `New` for major, headline features; `Improved` for quality-of-life updates and polish; `Fixed` for bug fixes. Omit a bucket if it has no entries.
+     - Rewrite every entry from the user's perspective. Describe what changed for someone using the extension.
+     - Drop anything with no user-visible impact: internal refactors, test or CI changes, dependency bumps, and doc edits.
+     - Use one succinct line per entry, with no jargon, file names, symbols, or implementation detail.
+   - Keep a fresh empty `## Unreleased` section above the new release section.
+   - After writing the draft, show the new `CHANGELOG.md` section to the user and offer to open the file with `${EDITOR:-${VISUAL:-open}} CHANGELOG.md`, or to take edits in conversation.
+   - Get explicit confirmation before continuing. The GitHub release body must use the confirmed `CHANGELOG.md` section.
 
 4. Verify the script carries the new version:
    `grep -c "<new-version>" markedit-native-text-shortcuts.js`
