@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 1.0.3 (2026-07-20)
+
+### Changed
+
+- Renamed from `markedit-native-text-navigation` → `markedit-native-text-shortcuts`.
+
 ## 1.0.2 (2026-07-18)
 
 ### Improved

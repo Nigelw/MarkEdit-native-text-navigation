@@ -1,8 +1,8 @@
-# MarkEdit Native Text Navigation Plugin
+# markedit-native-text-shortcuts
 
 Enable standard macOS text-editing keyboard shortcuts in [MarkEdit](https://github.com/MarkEdit-app/MarkEdit).
 
-**[⬇ Download the latest release](https://github.com/Nigelw/MarkEdit-native-text-navigation/releases/latest/download/markedit-native-text-navigation.js)** then see [Install](#install) below.
+**[Download the latest release](https://github.com/Nigelw/markedit-native-text-shortcuts/releases/latest/download/markedit-native-text-shortcuts.js)** then see [Install](#install) below.
 
 ## Behavior
 
@@ -19,8 +19,8 @@ In CodeMirror terms, a paragraph here is the current document line, which matche
 
 ## Install
 
-1. Download the [latest release](https://github.com/Nigelw/MarkEdit-native-text-navigation/releases/latest/download/markedit-native-text-navigation.js).
-2. Copy `markedit-native-text-navigation.js` into MarkEdit's scripts folder:
+1. Download the [latest release](https://github.com/Nigelw/markedit-native-text-shortcuts/releases/latest/download/markedit-native-text-shortcuts.js).
+2. Copy `markedit-native-text-shortcuts.js` into MarkEdit's scripts folder:
 
 ```
 ~/Library/Containers/app.cyan.markedit/Data/Documents/scripts/
@@ -30,15 +30,15 @@ In CodeMirror terms, a paragraph here is the current document line, which matche
 
 ## Updates
 
-The extension checks the latest GitHub release once per week. When a newer release is available, it downloads the `markedit-native-text-navigation.js` release asset and overwrites the installed script. Restart MarkEdit after updating.
+The extension checks the latest GitHub release once per week. When a newer release is available, it downloads the `markedit-native-text-shortcuts.js` release asset and overwrites the installed script. Restart MarkEdit after updating.
 
-You can also check manually from *Extensions -> Native Text Navigation -> Check for Updates...*.
+You can also check manually from *Extensions -> Native Text Shortcuts -> Check for Updates...*.
 
 By default, update behavior is `notify`. To change it, add this to MarkEdit's `settings.json`:
 
 ```json
 {
-  "extension.markeditNativeTextNavigation": {
+  "extension.markeditNativeTextShortcuts": {
     "update": "notify"
   }
 }

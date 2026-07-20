@@ -1,20 +1,20 @@
-// markedit-native-text-navigation
-// Version: 1.0.2
-// Repository: https://github.com/Nigelw/MarkEdit-native-text-navigation
+// markedit-native-text-shortcuts
+// Version: 1.0.3
+// Repository: https://github.com/Nigelw/markedit-native-text-shortcuts
 
 (() => {
   const { keymap } = MarkEdit.codemirror.view;
   const { EditorSelection, Prec } = MarkEdit.codemirror.state;
 
-  const EXTENSION_NAME = 'Native Text Navigation';
-  const CURRENT_VERSION = '1.0.2';
-  const GITHUB_REPO = 'Nigelw/MarkEdit-native-text-navigation';
+  const EXTENSION_NAME = 'Native Text Shortcuts';
+  const CURRENT_VERSION = '1.0.3';
+  const GITHUB_REPO = 'Nigelw/markedit-native-text-shortcuts';
   const REPO_URL = `https://github.com/${GITHUB_REPO}`;
   const LATEST_RELEASE_URL = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
-  const UPDATE_ASSET_NAME = 'markedit-native-text-navigation.js';
-  const SETTINGS_NAMESPACE = 'extension.markeditNativeTextNavigation';
-  const LAST_CHECK_STORAGE_KEY = 'markedit-native-text-navigation.updater.last-check';
-  const SKIPPED_VERSIONS_STORAGE_KEY = 'markedit-native-text-navigation.updater.skipped';
+  const UPDATE_ASSET_NAME = 'markedit-native-text-shortcuts.js';
+  const SETTINGS_NAMESPACE = 'extension.markeditNativeTextShortcuts';
+  const LAST_CHECK_STORAGE_KEY = 'markedit-native-text-shortcuts.updater.last-check';
+  const SKIPPED_VERSIONS_STORAGE_KEY = 'markedit-native-text-shortcuts.updater.skipped';
   const CHECK_INTERVAL_MS = 7 * 24 * 60 * 60 * 1000;
 
   function paragraphBoundary(state, position, direction) {
