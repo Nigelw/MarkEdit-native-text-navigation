@@ -1,6 +1,6 @@
 # MarkEdit Native Text Navigation Plugin
 
-Adopts standard macOS text-editing behavior for Option-Up/Down in [MarkEdit](https://github.com/MarkEdit-app/MarkEdit).
+Enable standard macOS text-editing keyboard shortcuts in [MarkEdit](https://github.com/MarkEdit-app/MarkEdit).
 
 **[⬇ Download the latest release](https://github.com/Nigelw/MarkEdit-native-text-navigation/releases/latest/download/markedit-native-text-navigation.js)** then see [Install](#install) below.
 
