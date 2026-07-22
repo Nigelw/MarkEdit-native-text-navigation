@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.5 (2026-07-22)
+
+### Improved
+
+- Adds a menu item for opening the release notes on GitHub.
+
 ## 1.0.4 (2026-07-20)
 
 ### Fixed

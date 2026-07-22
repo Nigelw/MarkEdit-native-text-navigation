@@ -47,7 +47,6 @@ There is no build step in this repo. The root `markedit-native-text-shortcuts.js
      - Rewrite every entry from the user's perspective. Describe what changed for someone using the extension.
      - Drop anything with no user-visible impact: internal refactors, test or CI changes, dependency bumps, and doc edits.
      - Use one succinct line per entry, with no jargon, file names, symbols, or implementation detail.
-   - Do not create or preserve an empty `## Unreleased` section.
    - After writing the draft, show the new `CHANGELOG.md` section to the user and offer to open the file with `${EDITOR:-${VISUAL:-open}} CHANGELOG.md`, or to take edits in conversation.
    - Get explicit confirmation before continuing. The GitHub release body must use the confirmed `CHANGELOG.md` section.
 

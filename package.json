@@ -1,6 +1,6 @@
 {
   "name": "markedit-native-text-shortcuts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Restore native macOS text-editing shortcuts in MarkEdit.",
   "main": "markedit-native-text-shortcuts.js",
   "repository": {
