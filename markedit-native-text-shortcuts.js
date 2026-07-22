@@ -10,6 +10,7 @@
   const CURRENT_VERSION = '1.0.4';
   const GITHUB_REPO = 'Nigelw/MarkEdit-native-text-shortcuts';
   const REPO_URL = `https://github.com/${GITHUB_REPO}`;
+  const RELEASE_NOTES_URL = `${REPO_URL}/blob/main/CHANGELOG.md`;
   const LATEST_RELEASE_URL = `https://api.github.com/repos/${GITHUB_REPO}/releases/latest`;
   const UPDATE_ASSET_NAME = 'markedit-native-text-shortcuts.js';
   const SETTINGS_NAMESPACE = 'extension.markeditNativeTextShortcuts';
@@ -238,6 +239,10 @@
         {
           title: 'Visit GitHub Project',
           action: () => openURL(REPO_URL),
+        },
+        {
+          title: 'View Release Notes',
+          action: () => openURL(RELEASE_NOTES_URL),
         },
         {
           title: 'Check for Updates...',

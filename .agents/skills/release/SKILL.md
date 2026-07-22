@@ -32,7 +32,7 @@ There is no build step in this repo. The root `markedit-native-text-shortcuts.js
      ```sh
      git log --no-merges <prev-tag>..HEAD --pretty='%s%n%b'
      ```
-   - Move the `## Unreleased` notes into a new release section for the chosen version:
+   - Draft a new release section for the chosen version directly below `# Changelog` and above the latest existing release:
      ```markdown
      ## <version> (YYYY-MM-DD)
 
@@ -40,13 +40,14 @@ There is no build step in this repo. The root `markedit-native-text-shortcuts.js
 
      - ...
      ```
-   - If `## Unreleased` is empty, draft the release section from the commits.
+   - Use the commits since the previous release as the primary source for release notes.
+   - If there are existing top-of-file notes above the latest release, fold them into the new release section.
    - Author the section as short user-facing Markdown, applying these rules:
      - Draft release note entries under three Markdown `###` headings in this order: `New` for major, headline features; `Improved` for quality-of-life updates and polish; `Fixed` for bug fixes. Omit a bucket if it has no entries.
      - Rewrite every entry from the user's perspective. Describe what changed for someone using the extension.
      - Drop anything with no user-visible impact: internal refactors, test or CI changes, dependency bumps, and doc edits.
      - Use one succinct line per entry, with no jargon, file names, symbols, or implementation detail.
-   - Keep a fresh empty `## Unreleased` section above the new release section.
+   - Do not create or preserve an empty `## Unreleased` section.
    - After writing the draft, show the new `CHANGELOG.md` section to the user and offer to open the file with `${EDITOR:-${VISUAL:-open}} CHANGELOG.md`, or to take edits in conversation.
    - Get explicit confirmation before continuing. The GitHub release body must use the confirmed `CHANGELOG.md` section.
 

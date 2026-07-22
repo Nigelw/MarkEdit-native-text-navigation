@@ -52,4 +52,4 @@ Supported values are:
 
 ## Releases
 
-Release notes live in [CHANGELOG.md](CHANGELOG.md). This repo also includes a `release` skill at `.claude/skills/release/SKILL.md` for bumping versions, updating the changelog, tagging, pushing, and publishing the script as the GitHub release asset used by the updater.
+Release notes live in [CHANGELOG.md](CHANGELOG.md). This repo also includes a `release` skill at `.agents/skills/release/SKILL.md` for bumping versions, updating the changelog, tagging, pushing, and publishing the script as the GitHub release asset used by the updater.
