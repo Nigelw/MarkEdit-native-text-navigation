@@ -1,5 +1,5 @@
 // markedit-native-text-shortcuts
-// Version: 1.1.0
+// Version: 1.1.1
 // Repository: https://github.com/Nigelw/MarkEdit-native-text-shortcuts
 
 (() => {
@@ -8,7 +8,7 @@
   const { syntaxTree } = MarkEdit.codemirror.language;
 
   const EXTENSION_NAME = 'Native Text Shortcuts';
-  const CURRENT_VERSION = '1.1.0';
+  const CURRENT_VERSION = '1.1.1';
   const GITHUB_REPO = 'Nigelw/MarkEdit-native-text-shortcuts';
   const REPO_URL = `https://github.com/${GITHUB_REPO}`;
   const RELEASE_NOTES_URL = `${REPO_URL}/blob/main/CHANGELOG.md`;
