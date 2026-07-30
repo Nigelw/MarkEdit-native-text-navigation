@@ -8,14 +8,14 @@ Makes MarkEdit’s <kbd>Option</kbd>+<kbd>Arrow Key</kbd> text navigation behave
 
 ### Move by paragraph
 
-- <kbd>⌥</kbd><kbd>↑/↓</kbd> moves the insertion point to the beginning or end of the current paragraph.
-- <kbd>⌥</kbd><kbd>⇧</kbd><kbd>↑/↓</kbd> extends the selection to the beginning or end of the current paragraph.
+- <kbd>⌥</kbd><kbd>↑/↓</kbd> moves the insertion point to the beginning or end of a paragraph.
+- <kbd>⌥</kbd><kbd>⇧</kbd><kbd>↑/↓</kbd> extends the selection to the beginning or end of a paragraph.
 
 *Overrides MarkEdit’s default behavior for these shortcuts, which is to move or copy paragraphs.*
 
 ### Move by word
 
-- <kbd>⌥</kbd><kbd>←/→</kbd> moves by native-style word boundaries.
+- <kbd>⌥</kbd><kbd>←/→</kbd> moves the insertion point by native-style word boundaries.
 - <kbd>⌥</kbd><kbd>⇧</kbd><kbd>←/→</kbd> extends the selection by those boundaries.
 
 *Overrides MarkEdit’s default behavior for these shortcuts, which is to stop the cursor at apostrophes and symbols like `> < - – — / . , : ; ! ? # @ * () [] {}`.*
