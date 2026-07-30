@@ -1,21 +1,24 @@
 # MarkEdit Native Text Shortcuts
 
-Enable standard macOS text-editing keyboard shortcuts in [MarkEdit](https://github.com/MarkEdit-app/MarkEdit).
+Makes MarkEdit’s <kbd>Option</kbd>+<kbd>Arrow Key</kbd> text navigation behave like native macOS text fields.
 
 **[Download the latest release](https://github.com/Nigelw/MarkEdit-native-text-shortcuts/releases/latest/download/markedit-native-text-shortcuts.js)** then see [Install](#install) below.
 
-## Behavior
+## Features
 
-By default, MarkEdit key bindings follow the conventions used by source code editors such as VS Code:
-- `Option-Up/Down` moves the current paragraph up or down.
-- `Shift-Option-Up/Down` duplicates the current paragraph above or below.
+### Move by paragraph
 
-This extension overrides these defaults so that:
-- `Option-Up/Down` moves the insertion point to the beginning/end of the current paragraph.
-- `Shift-Option-Up/Down` extends the selection to the beginning/end of the current paragraph.
-- Repeat presses of these shortcuts continue to advance to the previous/next paragraphs.
+- <kbd>⌥</kbd><kbd>↑/↓</kbd> moves the insertion point to the beginning or end of the current paragraph.
+- <kbd>⌥</kbd><kbd>⇧</kbd><kbd>↑/↓</kbd> extends the selection to the beginning or end of the current paragraph.
 
-In CodeMirror terms, a paragraph here is the current document line, which matches native macOS text fields for hard-wrapped plain text and Markdown paragraphs.
+*Overrides MarkEdit’s default behavior for these shortcuts, which is to move or copy paragraphs.*
+
+### Move by word
+
+- <kbd>⌥</kbd><kbd>←/→</kbd> moves by native-style word boundaries.
+- <kbd>⌥</kbd><kbd>⇧</kbd><kbd>←/→</kbd> extends the selection by those boundaries.
+
+*Overrides MarkEdit’s default behavior for these shortcuts, which is to stop the cursor at apostrophes and symbols like `> < - – — / . , : ; ! ? # @ * () [] {}`.*
 
 ## Install
 
@@ -27,6 +30,26 @@ In CodeMirror terms, a paragraph here is the current document line, which matche
 ```
 
 3. Relaunch MarkEdit. After that the extension [keeps itself up to date](#updates) so there's no need to download it again by hand.
+
+## Word navigation settings
+
+Choose a mode from *Extensions -> Native Text Shortcuts*. It takes effect immediately and is saved in MarkEdit's `settings.json`.
+
+| Menu Option | Setting | Behavior |
+| --- | --- | --- |
+| Use macOS-Style Word Navigation Everywhere | `everywhere` (default) | Native-style word movement in prose and code blocks. |
+| Use Code-Style Word Navigation in Code Blocks | `proseOnly` | Native-style word movement in prose; code-style word movement within code blocks. |
+| Use Code-Style Word Navigation Everywhere | `disabled` | Code-style word movement (MarkEdit default behavior) everywhere. |
+
+Alternately, you can set the mode manually by adding this to MarkEdit's `settings.json`:
+
+```json
+{
+  "extension.markeditNativeTextShortcuts": {
+    "wordNavigation": "everywhere/proseOnly/disabled"
+  }
+}
+```
 
 ## Updates
 
@@ -44,7 +67,7 @@ By default, update behavior is `notify`. To change it, add this to MarkEdit's `s
 }
 ```
 
-Supported values are:
+Supported `update` values are:
 
 - `automatic`: install new releases silently, then prompt you to restart MarkEdit.
 - `notify`: ask before installing.
