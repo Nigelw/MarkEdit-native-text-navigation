@@ -5,7 +5,7 @@
 ### New
 
 - Adds native-style Option-Left/Right word navigation, including selection with Shift-Option-Left/Right, to move through Markdown punctuation and markers more like a native macOS text field.
-- Adds menu options for choosing macOS-style word navigation everywhere, only in prose, or nowhere.
+- Adds a *Use Code-Style Word Navigation in Code Blocks* menu toggle. It is off by default, so macOS-style word navigation applies everywhere unless you opt to preserve code-style navigation in code blocks.
 
 ## 1.0.5 (2026-07-22)
 

@@ -19,7 +19,6 @@
   const SKIPPED_VERSIONS_STORAGE_KEY = 'markedit-native-text-shortcuts.updater.skipped';
   const SETTINGS_FILE_NAME = 'settings.json';
   const CHECK_INTERVAL_MS = 7 * 24 * 60 * 60 * 1000;
-  const WORD_NAVIGATION_OPTIONS = ['proseOnly', 'everywhere', 'disabled'];
   const wordSegmenter = typeof Intl !== 'undefined' && typeof Intl.Segmenter === 'function'
     ? new Intl.Segmenter(undefined, { granularity: 'word' })
     : undefined;
@@ -72,17 +71,16 @@
     return true;
   }
 
-  function wordNavigationBehavior() {
+  function usesCodeNavigationInCodeBlocks() {
     try {
-      const behavior = MarkEdit.userSettings?.[SETTINGS_NAMESPACE]?.wordNavigation;
-      return WORD_NAVIGATION_OPTIONS.includes(behavior) ? behavior : 'everywhere';
+      return MarkEdit.userSettings?.[SETTINGS_NAMESPACE]?.codeNavigationInCodeBlocks === true;
     } catch {
-      return 'everywhere';
+      return false;
     }
   }
 
-  async function setWordNavigationBehavior(behavior) {
-    if (!WORD_NAVIGATION_OPTIONS.includes(behavior)) {
+  async function setCodeNavigationInCodeBlocks(enabled) {
+    if (typeof enabled !== 'boolean') {
       return;
     }
 
@@ -112,7 +110,10 @@
     const existing = typeof settings[SETTINGS_NAMESPACE] === 'object' && settings[SETTINGS_NAMESPACE] !== null
       ? settings[SETTINGS_NAMESPACE]
       : {};
-    settings[SETTINGS_NAMESPACE] = { ...existing, wordNavigation: behavior };
+    settings[SETTINGS_NAMESPACE] = {
+      ...existing,
+      codeNavigationInCodeBlocks: enabled,
+    };
 
     const ok = await MarkEdit.createFile({
       path,
@@ -222,15 +223,15 @@
 
   function moveByNativeWord(view, right, extend) {
     const { state } = view;
-    const behavior = wordNavigationBehavior();
 
-    if (behavior === 'disabled' || wordSegmenter === undefined) {
+    if (wordSegmenter === undefined) {
       return false;
     }
 
     // Returning false leaves the key to CodeMirror's normal command. This
     // preserves source-editor-style navigation in Markdown code blocks.
-    if (behavior === 'proseOnly' && state.selection.ranges.some(range => isInCodeBlock(state, range.head))) {
+    if (usesCodeNavigationInCodeBlocks()
+      && state.selection.ranges.some(range => isInCodeBlock(state, range.head))) {
       return false;
     }
 
@@ -442,19 +443,11 @@
       title: EXTENSION_NAME,
       children: [
         {
-          title: 'Use macOS-Style Word Navigation Everywhere',
-          action: () => void setWordNavigationBehavior('everywhere'),
-          state: () => ({ isSelected: wordNavigationBehavior() === 'everywhere' }),
-        },
-        {
           title: 'Use Code-Style Word Navigation in Code Blocks',
-          action: () => void setWordNavigationBehavior('proseOnly'),
-          state: () => ({ isSelected: wordNavigationBehavior() === 'proseOnly' }),
-        },
-        {
-          title: 'Use Code-Style Word Navigation Everywhere',
-          action: () => void setWordNavigationBehavior('disabled'),
-          state: () => ({ isSelected: wordNavigationBehavior() === 'disabled' }),
+          action: () => void setCodeNavigationInCodeBlocks(
+            !usesCodeNavigationInCodeBlocks(),
+          ),
+          state: () => ({ isSelected: usesCodeNavigationInCodeBlocks() }),
         },
         { separator: true },
         {

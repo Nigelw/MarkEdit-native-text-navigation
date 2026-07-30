@@ -33,20 +33,14 @@ Makes MarkEdit’s <kbd>Option</kbd>+<kbd>Arrow Key</kbd> text navigation behave
 
 ## Word navigation settings
 
-Choose a mode from *Extensions -> Native Text Shortcuts*. It takes effect immediately and is saved in MarkEdit's `settings.json`.
+By default, macOS-style word navigation applies everywhere, including code blocks. Turn on *Extensions -> Native Text Shortcuts -> Use Code-Style Word Navigation in Code Blocks* to use MarkEdit's default word navigation logic inside fenced and indented code blocks. The change takes effect immediately and is saved in MarkEdit's `settings.json`.
 
-| Menu Option | Setting | Behavior |
-| --- | --- | --- |
-| Use macOS-Style Word Navigation Everywhere | `everywhere` (default) | Native-style word movement in prose and code blocks. |
-| Use Code-Style Word Navigation in Code Blocks | `proseOnly` | Native-style word movement in prose; code-style word movement within code blocks. |
-| Use Code-Style Word Navigation Everywhere | `disabled` | Code-style word movement (MarkEdit default behavior) everywhere. |
-
-Alternately, you can set the mode manually by adding this to MarkEdit's `settings.json`:
+To turn it on manually, add this to MarkEdit's `settings.json`:
 
 ```json
 {
   "extension.markeditNativeTextShortcuts": {
-    "wordNavigation": "everywhere/proseOnly/disabled"
+    "codeNavigationInCodeBlocks": true
   }
 }
 ```
