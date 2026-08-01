@@ -2,8 +2,6 @@
 
 Makes MarkEdit’s <kbd>Option</kbd>+<kbd>Arrow Key</kbd> text navigation behave like native macOS text fields.
 
-**[Download the latest release](https://github.com/Nigelw/MarkEdit-native-text-shortcuts/releases/latest/download/markedit-native-text-shortcuts.js)** then see [Install](#install) below.
-
 ## Features
 
 ### Move by paragraph
@@ -22,14 +20,9 @@ Makes MarkEdit’s <kbd>Option</kbd>+<kbd>Arrow Key</kbd> text navigation behave
 
 ## Install
 
-1. [Download the latest release](https://github.com/Nigelw/MarkEdit-native-text-shortcuts/releases/latest/download/markedit-native-text-shortcuts.js).
-2. Copy `markedit-native-text-shortcuts.js` into MarkEdit's scripts folder:
-
-```
-~/Library/Containers/app.cyan.markedit/Data/Documents/scripts/
-```
-
-3. Relaunch MarkEdit. After that the extension [keeps itself up to date](#updates) so there's no need to download it again by hand.
+1. Open MarkEdit's Extension Manager.
+2. Search for **Native Text Shortcuts** and choose **Install**.
+3. The Extension Manager manages future updates for you.
 
 ## Word navigation settings
 
@@ -45,28 +38,6 @@ To turn it on manually, add this to MarkEdit's `settings.json` and relaunch the 
 }
 ```
 
-## Updates
-
-The extension checks the latest GitHub release once per week. When a newer release is available, it downloads the `markedit-native-text-shortcuts.js` release asset and overwrites the installed script. Restart MarkEdit after updating.
-
-You can also check manually from *Extensions -> Native Text Shortcuts -> Check for Updates...*.
-
-By default, update behavior is `notify`. To change it, add this to MarkEdit's `settings.json`:
-
-```json
-{
-  "extension.markeditNativeTextShortcuts": {
-    "update": "notify"
-  }
-}
-```
-
-Supported `update` values are:
-
-- `automatic`: install new releases silently, then prompt you to restart MarkEdit.
-- `notify`: ask before installing.
-- `never`: disable automatic checks. Manual checks still work from the menu.
-
 ## Releases
 
-Release notes live in [CHANGELOG.md](CHANGELOG.md). This repo also includes a `release` skill at `.agents/skills/release/SKILL.md` for bumping versions, updating the changelog, tagging, pushing, and publishing the script as the GitHub release asset used by the updater.
+Release notes live in [CHANGELOG.md](CHANGELOG.md). Releases are published from immutable version tags and distributed through MarkEdit's Extension Manager.

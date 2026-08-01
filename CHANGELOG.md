@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2 (2026-08-01)
+
+### Improved
+
+- Updates are managed centrally by MarkEdit's Extension Manager.
+
 ## 1.1.1 (2026-07-30)
 
 ### Improved
