@@ -1,4 +1,0 @@
-interface:
-  display_name: "Submit to MarkEdit Registry"
-  short_description: "Prepare and submit a reviewed registry PR"
-  default_prompt: "Use $submit-registry to prepare the latest release for the MarkEdit extensions registry."
