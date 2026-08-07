@@ -12,7 +12,8 @@ A release is ready when all of these agree:
 1. `package.json` `version` is the new plain semver version.
 2. The `// Version:` header in `markedit-native-text-shortcuts.js` matches it.
 3. The `v<version>` tag points to the release commit.
-4. The JavaScript file fetched from that tag has the expected bytes.
+4. A GitHub Release exists for the `v<version>` tag.
+5. The JavaScript file fetched from that tag has the expected bytes.
 
 ## Before Starting
 
@@ -57,17 +58,26 @@ A release is ready when all of these agree:
    git push origin v<version>
    ```
 
-8. Verify the immutable tagged artifact:
+8. Create the GitHub Release from the approved user-facing notes in step 3. Write those notes to a temporary Markdown file, then create the release without attaching an artifact:
+   ```sh
+   gh release create v<version> \
+     --repo Nigelw/MarkEdit-native-text-shortcuts \
+     --verify-tag \
+     --title "v<version>" \
+     --notes-file /tmp/markedit-native-text-shortcuts-v<version>-notes.md
+   ```
+
+9. Verify the immutable tagged artifact:
    ```sh
    curl -fsSL -o /tmp/markedit-native-text-shortcuts.js \
      "https://raw.githubusercontent.com/Nigelw/MarkEdit-native-text-shortcuts/v<version>/markedit-native-text-shortcuts.js"
    shasum -a 256 /tmp/markedit-native-text-shortcuts.js
    ```
 
-9. Report the released version, commit, tag, artifact URL, and SHA-256. Stop after release verification. Registry submission is a separate activity handled by the `submit-registry` skill.
+10. Report the released version, commit, tag, GitHub Release URL, artifact URL, and SHA-256. Stop after release verification. Registry submission is a separate activity handled by the `submit-registry` skill.
 
 ## Notes
 
-- A GitHub Release is optional and is not required for distribution.
+- A GitHub Release is required for every published version, but no release asset is needed. MarkEdit's Extension Manager distributes the tagged JavaScript artifact through the separate registry submission process.
 - Do not alter an existing release tag; prepare a new version instead.
 - Existing manually installed copies from before the Extension Manager transition may need a one-time migration release asset, but that is separate from this release workflow.
