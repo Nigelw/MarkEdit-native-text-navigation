@@ -3,7 +3,7 @@
   "version": "1.1.2",
   "description": "Restore native macOS text-editing shortcuts in MarkEdit.",
   "markeditRegistry": {
-    "id": "native-text-shortcuts",
+    "id": "markedit-native-text-shortcuts",
     "name": "Native Text Shortcuts"
   },
   "main": "markedit-native-text-shortcuts.js",
