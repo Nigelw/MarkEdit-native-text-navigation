@@ -4,6 +4,11 @@ Makes MarkEdit’s <kbd>Option</kbd>+<kbd>Arrow Key</kbd> text navigation behave
 
 ## Features
 
+### Collapse a selection vertically
+
+- <kbd>↑/↓</kbd> collapses a selection and moves the insertion point one visual line.
+- The source column follows the selection head, so forward and backward selections match native macOS text fields.
+
 ### Move by paragraph
 
 - <kbd>⌥</kbd><kbd>↑/↓</kbd> moves the insertion point to the beginning or end of a paragraph.

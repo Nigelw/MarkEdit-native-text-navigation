@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.3 (2026-08-15)
+
+### New
+
+- When text is selected and you press the up or down arrow, move the text cursor using the same logic as native macOS text fields.
+  - Instead of moving to then beginning/end of selection range, it moves up/down a line, preserving the column position depending on the text selection direction.
+
 ## 1.1.2 (2026-08-01)
 
 ### Improved

@@ -1,5 +1,5 @@
 // markedit-native-text-shortcuts
-// Version: 1.1.2
+// Version: 1.1.3
 // Repository: https://github.com/Nigelw/MarkEdit-native-text-shortcuts
 
 (() => {
@@ -59,6 +59,55 @@
 
     view.dispatch({
       selection: EditorSelection.create(ranges, state.selection.mainIndex),
+      scrollIntoView: true,
+    });
+
+    return true;
+  }
+
+  function moveVerticallyLikeNativeTextField(view, forward) {
+    if (typeof view.moveVertically !== 'function') {
+      return false;
+    }
+
+    const { state } = view;
+    const ranges = state.selection.ranges.map(range => {
+      if (range.empty) {
+        return view.moveVertically(range, forward);
+      }
+
+      // Native text fields collapse toward the direction of travel, but use
+      // the selection head's column as the vertical-motion goal. The head is
+      // the range end in a forward selection and the range start in a
+      // backward selection, so this preserves selection direction.
+      const headAssoc = range.assoc || (range.head === range.from ? 1 : -1);
+      const headCoords = view.coordsAtPos(range.head, headAssoc);
+      const contentRect = view.contentDOM.getBoundingClientRect();
+      const headLine = state.doc.lineAt(range.head);
+      const goalColumn = headCoords == null
+        ? Math.min(
+          contentRect.right - contentRect.left,
+          view.defaultCharacterWidth * (range.head - headLine.from),
+        )
+        : headCoords.left - contentRect.left;
+      const collapsePosition = forward ? range.to : range.from;
+      const cursor = EditorSelection.cursor(
+        collapsePosition,
+        0,
+        undefined,
+        goalColumn,
+      );
+
+      return view.moveVertically(cursor, forward);
+    });
+    const selection = EditorSelection.create(ranges, state.selection.mainIndex);
+
+    if (selection.eq(state.selection, true)) {
+      return false;
+    }
+
+    view.dispatch({
+      selection,
       scrollIntoView: true,
     });
 
@@ -289,6 +338,16 @@
   }
 
   MarkEdit.addExtension(Prec.highest(keymap.of([
+    {
+      key: 'ArrowUp',
+      run: view => moveVerticallyLikeNativeTextField(view, false),
+      preventDefault: true,
+    },
+    {
+      key: 'ArrowDown',
+      run: view => moveVerticallyLikeNativeTextField(view, true),
+      preventDefault: true,
+    },
     {
       key: 'Alt-ArrowLeft',
       mac: 'Alt-ArrowLeft',
