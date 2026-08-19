@@ -20,7 +20,7 @@ Makes MarkEdit’s <kbd>Option</kbd>+<kbd>Arrow Key</kbd> text navigation behave
 
 ### Exit text selection ranges
 
-- When text is selected and you press the up or down arrow, moves the insertion point using the same behavior as native macOS text fields.
+- When text is selected and you press <kbd>↑</kbd> or <kbd>↓</kbd>, moves the insertion point using the same behavior as native macOS text fields.
 
 *Overrides MarkEdit's default behavior of moving to the beginning/end of the selection range.*
 
